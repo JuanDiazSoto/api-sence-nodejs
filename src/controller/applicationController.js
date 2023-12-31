@@ -25,7 +25,7 @@ const createNewApp = async (req, res) => {
       Flag,
     });
     const appSave = await newApp.save();
-    res.status(201).json(JSON.stringify(appSave));
+    res.status(201).json(appSave);
   } catch (e) {
     res.status(500).json({ message: `Error Internal server :  ${e}` });
   }
