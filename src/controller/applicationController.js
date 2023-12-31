@@ -32,11 +32,18 @@ const createNewApp = async (req, res) => {
 };
 
 const updateApplication = async (req, res) => {
-  const ip = req.query.ip;
-  const GlosaError = req.query.GlosaError;
-  const Flag = req.query.Flag;
+  try {
+    const id = req.query.id;
+    const glosaError = req.query.GlosaError;
+    const flag = req.query.Flag;
 
-
+    const update = { GlosaError: glosaError, Flag: flag };
+    const updateApp = await AppDB.findByIdAndUpdate(id, update);
+    res.status(201).json(updateApp);
+  } catch (e) 
+  {
+    res.status(500).json({ message: `Error Internal server :  ${e}` });
+  }
 };
 
 const getApplications = async (req, res) => {
