@@ -3,6 +3,17 @@ const dotenv        = require('dotenv');
 const moment = require('moment');
 dotenv.config();
 
+const getApplication = async (req, res) =>{
+  try {
+    const idApp = req.params.id;
+    const application = await AppDB.findById(idApp);
+    res.status(200).json(application);
+  }catch(e){
+    res.status(500).json({ message: `Error internal server : ${e}` });
+  }
+}
+
+
 const createNewApp = async (req, res) => {
   try {
     const ip = req.query.ip;
@@ -76,6 +87,7 @@ const getApplications = async (req, res) => {
 };
 
 module.exports = {
+  getApplication,
   createNewApp,
   updateApplication,
   getApplications,
