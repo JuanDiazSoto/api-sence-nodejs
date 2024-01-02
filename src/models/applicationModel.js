@@ -9,7 +9,8 @@ const applicationSchema = new mongoose.Schema(
     IdSesionSense : { type : String},
     LineaCapacitacion: { type : String}, 
     GlosaError: { type : String},
-    Flag : { type : String}
+    Flag : { type : String},
+    href : {type : String },
   },
   {
     timestamps: true,
