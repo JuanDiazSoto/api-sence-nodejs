@@ -24,6 +24,7 @@ const createNewApp = async (req, res) => {
     const LineaCapacitacion = req.query.LineaCapacitacion;
     const GlosaError = req.query.GlosaError;
     const Flag = req.query.Flag;
+    const href = req.query.href;
     // const { ip, codSence, codCurso, IdSesionAlumno, IdSesionSense, LineaCapacitacion, GlosaError, Flag } = req.body;
     const newApp = new AppDB({
       ip,
@@ -34,6 +35,7 @@ const createNewApp = async (req, res) => {
       LineaCapacitacion,
       GlosaError,
       Flag,
+      href
     });
     const appSave = await newApp.save();
     res.status(201).json(appSave);
