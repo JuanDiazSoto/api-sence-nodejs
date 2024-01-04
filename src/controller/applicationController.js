@@ -19,7 +19,7 @@ const createNewApp = async (req, res) => {
     const ip = req.query.ip;
     const idTrabajador = req.query.idTrabajador;
     const codSence = req.query.codSence;
-    const codCurso = req.query.conCurso;
+    const codCurso = req.query.codCurso;
     const IdSesionAlumno = req.query.IdSesionAlumno;
     const IdSesionSense = req.query.IdSesionSense;
     const LineaCapacitacion = req.query.LineaCapacitacion;
