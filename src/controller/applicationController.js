@@ -17,6 +17,7 @@ const getApplication = async (req, res) =>{
 const createNewApp = async (req, res) => {
   try {
     const ip = req.query.ip;
+    const idTrabajador = req.query.idTrabajador;
     const codSence = req.query.codSence;
     const codCurso = req.query.conCurso;
     const IdSesionAlumno = req.query.IdSesionAlumno;
@@ -25,9 +26,10 @@ const createNewApp = async (req, res) => {
     const GlosaError = req.query.GlosaError;
     const Flag = req.query.Flag;
     const href = req.query.href;
-    // const { ip, codSence, codCurso, IdSesionAlumno, IdSesionSense, LineaCapacitacion, GlosaError, Flag } = req.body;
+    // const { ip, idTrabajador, codSence, codCurso, IdSesionAlumno, IdSesionSense, LineaCapacitacion, GlosaError, Flag } = req.body;
     const newApp = new AppDB({
       ip,
+      idTrabajador,
       codSence,
       codCurso,
       IdSesionAlumno,
