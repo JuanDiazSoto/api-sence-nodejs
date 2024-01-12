@@ -15,4 +15,13 @@ app.use(cors());
 
 app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
+
+app.post('/redireccionar', (req, res) => {
+
+  const paginaDestino = 'https://www.google.com';
+  
+  // Redirige a la página especificada
+  res.redirect(paginaDestino);
+});
+
 app.listen(PORT, () => { console.log("Server Listening") });
