@@ -17,11 +17,8 @@ app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.post('/redireccionar', (req, res) => {
-  console.log(req);
-  const paginaDestino = 'https://www.google.com';
-  
-  // Redirige a la página especificada
-  res.redirect(paginaDestino);
+  const href = req.body.href;
+  res.redirect(href);
 });
 
 app.listen(PORT, () => { console.log("Server Listening") });
