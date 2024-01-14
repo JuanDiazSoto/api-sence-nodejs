@@ -3,6 +3,7 @@ const dotenv        = require('dotenv');
 const bodyParser    = require('body-parser');
 const cors          = require('cors');
 const appRoutes     = require("./v1/routes/application.routes");
+const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
 
 const app = express();
