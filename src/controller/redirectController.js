@@ -24,3 +24,8 @@ const actualizaDB = async (req, res) => {
     }
 
 }
+
+
+module.exports = {
+    actualizaDB
+};
