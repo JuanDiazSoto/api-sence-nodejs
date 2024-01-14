@@ -16,9 +16,12 @@ app.use(cors());
 app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
+app.post('/', redirectRoutes);
+/*
 app.post('/redireccionar', (req, res) => {
   const href = req.body.href;
   res.redirect(href);
 });
+*/
 
 app.listen(PORT, () => { console.log("Server Listening") });
