@@ -15,7 +15,7 @@ const actualizaDB = async (req, res) => {
         }
         const href = req.query.href;
 
-        const filter = { GlosaError: glosaError, flag: flag };
+        const filter = { GlosaError: req.body.GlosaError, flag: flag };
         const appUpdate = await AppDB.findByIdAndUpdate(id, filter, { new : true, });
         res.redirect(href);
 
