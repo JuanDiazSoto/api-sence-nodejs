@@ -19,12 +19,7 @@ app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.post('/', redirectRoutes);
-
-
-
-
 app.post('/redireccionar', redController.actualizaDB);
-
 
 /*
 app.post('/redireccionar', (req, res) => {
