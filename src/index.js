@@ -5,6 +5,7 @@ const cors          = require('cors');
 const appRoutes     = require("./v1/routes/application.routes");
 const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
+const redController = require("./controller/redirectController");
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,13 @@ app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.post('/', redirectRoutes);
+
+
+
+
+app.post('/redireccionar', redController.actualizaDB);
+
+
 /*
 app.post('/redireccionar', (req, res) => {
   const href = req.body.href;
