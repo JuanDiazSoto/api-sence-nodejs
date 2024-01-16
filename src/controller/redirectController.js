@@ -18,6 +18,7 @@ console.log("Redirect", req.body.IdSesionAlumno);
 
         const filter = { GlosaError: req.body.GlosaError, Flag: flag };
         const appUpdate = await AppDB.findByIdAndUpdate(id, filter, { new : true, });
+        console.log(appUpdate)
         res.redirect(appUpdate.href);
 
     }catch(e){
