@@ -11,7 +11,7 @@ console.log("Redirect", req.body.IdSesionAlumno);
         const flag = true;
         const id = req.body.IdSesionAlumno;
         const IdSesionSense = req.body.IdSesionSense;
-        if(!req.body.GlosaError){
+        if(req.body.GlosaError){
             flag = false;
         }
         const href = req.query.href;
