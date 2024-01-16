@@ -6,6 +6,7 @@ dotenv.config();
 
 const actualizaDB = async (req, res) => {
 console.log("Redirect", req.body.GlosaError);
+console.log("Redirect", req.body.IdSesionAlumno);
     try {
         const flag = true;
         const id = req.body.IdSesionAlumno;
