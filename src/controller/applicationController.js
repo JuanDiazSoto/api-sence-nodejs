@@ -5,6 +5,8 @@ dotenv.config();
 
 const getApplication = async (req, res) =>{
   try {
+
+    console.log("getApplication : ",req.params.id);
     const idApp = req.params.id;
     const application = await AppDB.findById(idApp);
     res.status(200).json(application);
