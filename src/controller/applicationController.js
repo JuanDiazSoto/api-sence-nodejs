@@ -42,7 +42,9 @@ const createNewApp = async (req, res) => {
       href
     });
     const appSave = await newApp.save();
-    res.status(201).json(appSave);
+    const filter = { IdSesionAlumno : appSave._id }
+    const appUpdate = await AppDB.findByIdAndUpdate(appSave._id, filter, { new : true, });
+    res.status(201).json(appUpdate);
   } catch (e) {
     res.status(500).json({ message: `Error Internal server :  ${e}` });
   }
