@@ -8,7 +8,7 @@ const actualizaDB = async (req, res) => {
 console.log("Redirect", req.body.GlosaError);
 console.log("Redirect", req.body.IdSesionAlumno);
     try {
-        const flag = true;
+        var flag = true;
         const id = req.body.IdSesionAlumno;
         var IdSesionSense = "";
         if(req.body.GlosaError){
@@ -17,12 +17,16 @@ console.log("Redirect", req.body.IdSesionAlumno);
         else{
          IdSesionSense  = req.body.IdSesionSense;
         }
-        
+        console.log("PASO");
         //const href = req.query.href;
 
         const filter = { GlosaError: req.body.GlosaError, Flag: flag };
+        console.log("filter", filter);
         const appUpdate = await AppDB.findByIdAndUpdate(id, filter, { new : true, });
+        console.log("update", appUpdate);
+        
         const application = await AppDB.findById(id);
+        console.log("update", appUpdate);
         console.log(application)
         res.redirect(application.href);
 
