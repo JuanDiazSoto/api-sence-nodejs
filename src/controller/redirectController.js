@@ -10,11 +10,15 @@ console.log("Redirect", req.body.IdSesionAlumno);
     try {
         const flag = true;
         const id = req.body.IdSesionAlumno;
-        const IdSesionSense = req.body.IdSesionSense;
+        var IdSesionSense = "";
         if(req.body.GlosaError){
             flag = false;
         }
-        const href = req.query.href;
+        else{
+         IdSesionSense  = req.body.IdSesionSense;
+        }
+        
+        //const href = req.query.href;
 
         const filter = { GlosaError: req.body.GlosaError, Flag: flag };
         const appUpdate = await AppDB.findByIdAndUpdate(id, filter, { new : true, });
