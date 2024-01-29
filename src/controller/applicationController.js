@@ -27,7 +27,7 @@ const createNewApp = async (req, res) => {
     const LineaCapacitacion = req.query.LineaCapacitacion;
     const GlosaError = req.query.GlosaError;
     const Flag = req.query.Flag;
-    const href = req.query.href;
+    const href = decodeURIComponent(req.query.href);
     // const { ip, idTrabajador, codSence, codCurso, IdSesionAlumno, IdSesionSense, LineaCapacitacion, GlosaError, Flag } = req.body;
     const newApp = new AppDB({
       ip,
