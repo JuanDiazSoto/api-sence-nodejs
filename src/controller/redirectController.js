@@ -18,6 +18,8 @@ console.log("Redirect", req.body.IdSesionAlumno);
          IdSesionSense  = req.body.IdSesionSense;
         }
         console.log("PASO");
+        console.log(id);
+        
         //const href = req.query.href;
 
         const filter = { GlosaError: req.body.GlosaError, Flag: flag };
