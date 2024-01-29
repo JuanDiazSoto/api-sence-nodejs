@@ -30,7 +30,7 @@ console.log("Redirect", req.body.IdSesionAlumno);
         const application = await AppDB.findById(id);
         console.log("update", appUpdate);
         console.log(application)
-        res.redirect(application.href);
+        res.redirect(decodeURIComponent(application.href));
 
     }catch(e){
         console.log("Error Server : " , e);
