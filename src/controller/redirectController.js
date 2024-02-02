@@ -9,7 +9,7 @@ console.log("Redirect", req.body.GlosaError);
 console.log("Redirect", req.body.IdSesionAlumno);
     try {
         var flag = true;
-        const id = req.body.IdSesionAlumno;
+        const id = req.body.IdSesionAlumno; 
         var IdSesionSense = "";
         if(req.body.GlosaError != "200"){
             flag = false;
@@ -22,7 +22,7 @@ console.log("Redirect", req.body.IdSesionAlumno);
         
         //const href = req.query.href;
 
-        const filter = { GlosaError: req.body.GlosaError, Flag: flag };
+        const filter = { GlosaError: req.body.GlosaError, Flag: flag , IdSesionSense : IdSesionSense };
         console.log("filter", filter);
         const appUpdate = await AppDB.findByIdAndUpdate(id, filter, { new : true, });
         console.log("update", appUpdate);
