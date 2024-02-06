@@ -29,4 +29,16 @@ El proyecto utiliza las siguientes variables de entorno. Asegúrate de configura
 - **PORT**: Puerto en el que se ejecutará la aplicación (por defecto: 3000).
 
 ```bash
-export PORT=3000
+ PORT
+```
+```bash
+  COLLECTION
+```
+```bash
+  DB_COLLECTION
+```
+```bash
+  DB_MONGO
+```
+
+
