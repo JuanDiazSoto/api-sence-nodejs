@@ -22,7 +22,7 @@ app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.get('/macaddress', (req, res) => {
  // const  mac = getmac.default();
- const macAddress = first.first(); 
+ const macAddress = first.all(); 
  res.status(200).json(macAddress);
 });
 
