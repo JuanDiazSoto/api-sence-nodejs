@@ -6,7 +6,7 @@ const appRoutes     = require("./v1/routes/application.routes");
 const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
 const redController = require("./controller/redirectController");
-const os            = require('os');
+const getmac        = require('getmac');
 
 const app = express();
 dotenv.config();
