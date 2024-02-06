@@ -21,9 +21,9 @@ app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.get('/macaddress', (req, res) => {
   const networkInterfaces = os.networkInterfaces();
-  console.log(networkInterfaces);
+  console.log("macaddress1 : ", networkInterfaces);
   const macAddress = networkInterfaces['Ethernet']; // Ajusta 'Ethernet' según tu interfaz de red
-  console.log(macAddress)
+  console.log("macaddress2 : ",macAddress)
   res.json({ macAddress });
 });
 
