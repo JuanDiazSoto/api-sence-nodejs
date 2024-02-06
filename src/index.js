@@ -20,12 +20,10 @@ app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.get('/macaddress', (req, res) => {
-  const networkInterfaces = os.networkInterfaces();
-  console.log("macaddress1 : ", networkInterfaces);
-  const macAddress = networkInterfaces['Ethernet']; // Ajusta 'Ethernet' según tu interfaz de red
-  console.log("macaddress2 : ",macAddress)
-  res.json({ macAddress });
+  const  mac = getmac.default();
+  res.status(200).json(mac);
 });
+
 
 app.post('/', redirectRoutes);
 app.post('/redireccionar', redController.actualizaDB);
