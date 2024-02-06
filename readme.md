@@ -26,19 +26,17 @@ Instalar dependencias con npm.
 
 El proyecto utiliza las siguientes variables de entorno. Asegúrate de configurarlas antes de ejecutar la aplicación.
 
-- **PORT**: Puerto en el que se ejecutará la aplicación (por defecto: 3000).
-
 ```bash
  PORT
 ```
 ```bash
-  COLLECTION
+ COLLECTION
 ```
 ```bash
-  DB_COLLECTION
+ DB_COLLECTION
 ```
 ```bash
-  DB_MONGO
+ DB_MONGO
 ```
 
 
