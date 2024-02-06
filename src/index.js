@@ -7,7 +7,7 @@ const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
 const redController = require("./controller/redirectController");
 //const getmac        = require('getmac');
-const  first       = require('macaddress-local-machine');
+//const  first       = require('macaddress-local-machine');
 
 const app = express();
 dotenv.config();
@@ -20,12 +20,16 @@ app.use(cors());
 app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
-app.get('/macaddress', (req, res) => {
+//app.get('/macaddress', (req, res) => {
  // const  mac = getmac.default();
- const macAddress = first.all(); 
- res.status(200).json(req);
-});
+ //const macAddress = first.all(); 
+ //res.status(200).json(req);
+//});
 
+app.get('/api/v1/pc', (req, res) => {
+  const nombrePc = os.hostname();
+  res.json({ nombrePc });
+});
 
 app.post('/', redirectRoutes);
 app.post('/redireccionar', redController.actualizaDB);
