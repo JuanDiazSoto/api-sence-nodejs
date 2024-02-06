@@ -6,7 +6,8 @@ const appRoutes     = require("./v1/routes/application.routes");
 const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
 const redController = require("./controller/redirectController");
-const getmac        = require('getmac');
+//const getmac        = require('getmac');
+const  first       = require('macaddress-local-machine');
 
 const app = express();
 dotenv.config();
@@ -20,8 +21,9 @@ app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.get('/macaddress', (req, res) => {
-  const  mac = getmac.default();
-  res.status(200).json(mac);
+ // const  mac = getmac.default();
+ const macAddress = first.first(); 
+ res.status(200).json(macAddress);
 });
 
 
