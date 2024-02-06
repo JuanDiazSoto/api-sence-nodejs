@@ -8,13 +8,12 @@ Instalar dependencias con npm.
   npm install
 ```
     
-## Correr API
+## iniciar API dev
 
 ```bash
   npm run dev
 ```
-
-Iniciar API produccion. 
+## Iniciar API produccion. 
 
 ```bash
   npm run start
