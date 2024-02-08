@@ -11,7 +11,7 @@ console.log("Redirect", req.body.IdSesionAlumno);
         var flag = true;
         const id = req.body.IdSesionAlumno; 
         var IdSesionSense = "";
-        if(req.body.GlosaError != "200"){
+        if(req.body.GlosaError != "undefined"){
             flag = false;
         }
         else{
