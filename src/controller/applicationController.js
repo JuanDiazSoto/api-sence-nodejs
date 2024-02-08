@@ -86,6 +86,7 @@ const getApplications = async (req, res) => {
     const allApplications = await AppDB.find({
     createdAt:  { $gte: fechaCreacionDate, $lt: fechaFinDelDia } ,
       ip: ipAddress,
+      Flag : ''
     });
     res.status(200).json(allApplications);
   } catch (e) {
