@@ -16,7 +16,7 @@ const actualizaDB = async (req, res) => {
             flag = false;
         }
         else{
-         IdSesionSense  = req.body.IdSesionSense;
+         IdSesionSense  = req.body.IdSesionSence;
         }
         console.log("PASO : idSesionSence", IdSesionSense);
         console.log(id);
