@@ -18,7 +18,7 @@ app.use(cors());
 app.use('/api/v1/logs', appRoutes);
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
-app.post('/redireccionar', redController.redirectIniciaSesion);
+//app.post('/redireccionar', redController.redirectIniciaSesion);
 app.post('/redirectInicioSesion', redController.redirectIniciaSesion);
 app.post('/redirectCierreSesion', redController.redirectCierraSesion);
 
