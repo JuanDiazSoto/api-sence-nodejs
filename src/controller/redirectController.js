@@ -5,7 +5,6 @@ dotenv.config();
 
 
 const actualizaDB = async (req, res) => {
-//console.log("Redirect", req.body.GlosaError);
 
     console.log("Redirect", req.body);
     try {
@@ -36,7 +35,36 @@ const actualizaDB = async (req, res) => {
     }catch(e){
         console.log("Error Server : " , e);
     }
+}
 
+const redirectCierraSesion = asyn (req, res) => {
+    console.log("Redirect Cierra Sesion : ", req);
+
+    try{
+    }catch(e){
+
+        if(req.body.GlosaError != undefined){
+            
+           const id = req.body.IdSesionAlumno; 
+           const application = await AppDB.findById(id);
+           const url = application.href;
+
+            await AppDB.findByIdAndDelete(id, (error, success)=>{
+                if(error){
+                    console.log(`Ha ocurrido un error: ${error}`);                   
+                }else{
+                    console.log('Se ha Eliminado el registro');                    
+                }
+                res.redirect(decodeURIComponent(url));
+            })
+
+            
+            
+        }
+            
+        
+    }
+        
 }
 
 
