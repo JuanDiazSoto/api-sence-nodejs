@@ -30,7 +30,7 @@ const redirectIniciaSesion = async (req, res) => {
     }
 }
 
-const redirectCierraSesion = asyn (req, res) => {
+const redirectCierraSesion = async (req, res) => {
     console.log("Redirect Cierra Sesion : ", req);
 
     try{
