@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(cors());    
 
 app.use('/api/v1/logs', appRoutes);
-app.get('api/v1/ip', (req, res) => { res.status(200).json( { "ip" : req.ip } ) } );
+app.get('api/v1/ip', (req, res) => { console.log("Aqui va el request: ", req) } );
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.post('/', redirectRoutes);
