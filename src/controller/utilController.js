@@ -1,7 +1,7 @@
 const express = require('express');
 
 const getIp = async (req, res) =>{
-  console.log("obtener ip : ", req.ip);
+  console.log("obtener ip : ", req);
   try{
       res.status(200).json({"ip": req.ip});
   }catch(e){
