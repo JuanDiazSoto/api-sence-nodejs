@@ -8,7 +8,10 @@ const db            = require("./database/db");
 const redController = require("./controller/redirectController");
 const utilRoutes       = require("./v1/routes/util.routes");
 const requestIp = require('request-ip');
+
 const app = express();
+app.use(requestIp.mw());
+
 dotenv.config();
 const PORT = process.env.PORT || 443 ;
 
