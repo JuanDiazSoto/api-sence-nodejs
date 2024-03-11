@@ -6,6 +6,7 @@ const appRoutes     = require("./v1/routes/application.routes");
 const redirectRoutes = require("./v1/routes/redirect.routes");
 const db            = require("./database/db");
 const redController = require("./controller/redirectController");
+const appUtil       = require("./controller/UtilController");
 
 const app = express();
 dotenv.config();
@@ -16,7 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());    
 
 app.use('/api/v1/logs', appRoutes);
-app.get('api/v1/ip', (req, res) => { console.log("Aqui va el request: ", req) } );
+app.get('api/v1/util', appUtil );
 app.get( '/', ( req, res ) => { res.send('Bienvenido api - logs - sence') });
 
 app.post('/', redirectRoutes);
